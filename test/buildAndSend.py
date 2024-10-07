@@ -51,7 +51,6 @@ async def startRetrieval_(client: discord.Client):
                     if chn:
                         print(f'Channel id: {channel_id}')
                     elif chn is None and dmsLen == 0:
-                        print('You suck and swallow')
                         continue
                 
                 if dmsLen == 0 and chn is None:
@@ -101,17 +100,14 @@ async def startRetrieval_(client: discord.Client):
                 elif account.type == Shared.twitch:
                     impl = Twitch()
                 else:
-                    print('GAY')
                     continue
                 
                 res = await impl.fetch(account, page)
                 if res is None:
-                    print('HOMO')
                     continue
                 
                 embeds = await impl.parse(account, page)
                 if embeds is None:
-                    print('ur mom gey')
                     await asyncio.sleep(random.randint(30, 60))
                     continue
                 

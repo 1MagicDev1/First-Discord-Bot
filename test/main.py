@@ -44,7 +44,7 @@ async def on_ready():
 # ---------------------------------------------------------------------------------------------
 
 # STEP 3: Slash Command Definition
-@bot.tree.command(name="testhere", description="Test with a Twitter link")
+@bot.tree.command(name="here", description="Test with a Twitter link")
 @app_commands.describe(twitter_link="Provide a Twitter link")
 async def testhere(interaction, twitter_link: str):
     try:
@@ -57,12 +57,12 @@ async def testhere(interaction, twitter_link: str):
         if response:
             await interaction.response.send_message(response)
     except Exception as e:
-        print(f"Error in /testhere: {e}")
+        print(f"Error in /here: {e}")
         await interaction.response.send_message("Something went wrong.")
         
 # ---------------------------------------------------------------------------------------------
 
-@bot.tree.command(name="testdms", description="Send DMs based on a Twitter link")
+@bot.tree.command(name="dms", description="Send DMs based on a Twitter link")
 @app_commands.describe(twitter_link="Provide a Twitter link")
 async def dms(interaction, twitter_link: str):
     try:
