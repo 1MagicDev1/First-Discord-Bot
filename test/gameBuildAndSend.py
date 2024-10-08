@@ -322,7 +322,7 @@ async def get_leaderboard(client: discord.Client, game_name, server_id: int):
             leaderboard_of_ranks = ""
             for j, profile in enumerate(sorted_players[i:i + 10], 1):
                 leaderboard_of_players += f"{i + j}. {profile[0]}\n"
-                leaderboard_of_ranks += f"{current_game.players[profile[0]][0]} {current_game.players[profile[0]][1]}\n"
+                leaderboard_of_ranks += f"{i + j}. {current_game.players[profile[0]][0]} {current_game.players[profile[0]][1]}\n"
 
             embed = discord.Embed(
                 title="League of Legends Leaderboard",
