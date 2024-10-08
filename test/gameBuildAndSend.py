@@ -116,10 +116,10 @@ async def update_leaderboard_(client: discord.Client):
     gamedata.read()
 
     while True:
+        data_updated = False  # Track if data has been updated
         # Loop through all servers in the game data
         for server_id, server in gamedata.servers.items():
             for game_name, game in server.games.items():
-                data_updated = False  # Track if data has been updated
                 print("\n--------STARTING UPDATE--------\n")
                 players = list(game.players.keys())
                 # Break the players into chunks of 20
