@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from discord import Intents
 from discord.ext import commands
 from discord import app_commands
+from discord import Streaming
 import asyncio
 from responses import get_response
 from buildAndSend import startRetrieval_
@@ -38,6 +39,7 @@ async def on_ready():
     try:
         await bot.tree.sync()
         print("Synced commands.")
+        await bot.change_presence(activity=Streaming(name="Streaming This", url="https://www.twitch.tv/ferretsoftware")) # CHANGE URL AND NAME
     except Exception as e:
         print(f"Error syncing commands: {e}")
         
